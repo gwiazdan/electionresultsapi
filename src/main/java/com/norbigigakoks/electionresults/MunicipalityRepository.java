@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface MunicipalityRepository extends JpaRepository<Municipality, Long> {
-    @Query("SELECT new com.norbigigakoks.electionresults.dto.CountyVoteSummary(c.countyID, c.name, SUM(m.numberOfVotes), SUM(m.votesForKO), SUM(m.votesForPIS), SUM(m.votesForKONF), SUM(m.votesForTD), SUM(m.votesForLEW), SUM(m.votesForBS)) " +
+    @Query("SELECT new com.norbigigakoks.electionresults.dto.CountyVoteSummary(c.countyID, c.name, SUM(m.numberOfVotes), SUM(m.votesForKO), SUM(m.votesForPIS), SUM(m.votesForKONF), SUM(m.votesForTD), SUM(m.votesForLEW), SUM(m.votesForBS), SUM(m.votesForMN)) " +
             "FROM Municipality m JOIN m.county c " +
             "GROUP BY c.countyID")
     List<CountyVoteSummary> findCountyVoteSummary();

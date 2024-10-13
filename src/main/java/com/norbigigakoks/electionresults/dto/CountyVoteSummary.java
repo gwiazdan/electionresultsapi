@@ -1,5 +1,7 @@
 package com.norbigigakoks.electionresults.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 public class CountyVoteSummary {
     private Long countyID;
     private String name;
@@ -11,8 +13,11 @@ public class CountyVoteSummary {
     private Long votesForLEW;
     private Long votesForBS;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Long votesForMN;
 
-    public CountyVoteSummary(Long countyID, String name, Long votes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS) {
+
+    public CountyVoteSummary(Long countyID, String name, Long votes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS, Long votesForMN) {
         this.countyID = countyID;
         this.name = name;
         this.votes = votes;
@@ -22,6 +27,7 @@ public class CountyVoteSummary {
         this.votesForTD = votesForTD;
         this.votesForLEW = votesForLEW;
         this.votesForBS = votesForBS;
+        this.votesForMN = votesForMN;
     }
 
     public String getName() {
@@ -90,6 +96,14 @@ public class CountyVoteSummary {
 
     public void setVotesForLEW(Long votesForLEW) {
         this.votesForLEW = votesForLEW;
+    }
+
+    public Long getVotesForMN() {
+        return votesForMN;
+    }
+
+    public void setVotesForMN(Long votesForMN) {
+        this.votesForMN = votesForMN;
     }
 }
 

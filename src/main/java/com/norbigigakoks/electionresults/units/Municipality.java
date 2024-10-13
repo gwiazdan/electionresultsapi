@@ -1,7 +1,10 @@
 package com.norbigigakoks.electionresults.units;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
+
+import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
 @Entity
 @Table(name="Municipalities")
@@ -17,6 +20,9 @@ public class Municipality {
     private int votesForTD;
     private int votesForLEW;
     private int votesForBS;
+
+    @JsonInclude(NON_NULL)
+    private Integer votesForMN;
 
     public Long getMunicipalityID() {
         return municipalityID;
@@ -101,5 +107,13 @@ public class Municipality {
 
     public County getCounty() {
         return county;
+    }
+
+    public Integer getVotesForMN() {
+        return votesForMN;
+    }
+
+    public void setVotesForMN(Integer votesForMN) {
+        this.votesForMN = votesForMN;
     }
 }
