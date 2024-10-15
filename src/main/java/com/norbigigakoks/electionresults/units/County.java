@@ -32,4 +32,12 @@ public class County {
     @JoinColumn(name="voivodeshipID")
     @JsonIgnore
     private Voivodeship voivodeship;
+
+    public Voivodeship getVoivodeship() {
+        return voivodeship;
+    }
+
+    public void setVoivodeship(Voivodeship voivodeship) {
+        this.voivodeship = voivodeship;
+    }
 }
