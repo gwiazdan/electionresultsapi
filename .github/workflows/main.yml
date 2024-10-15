@@ -36,3 +36,9 @@ jobs:
       with:
         name: electionresults-api-jar
         path: target/*.jar
+
+    - name: Publish to GitHub Packages
+      run: mvn deploy
+      env:
+        GITHUB_USERNAME: ${{ secrets.GITHUB_ACTOR }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
