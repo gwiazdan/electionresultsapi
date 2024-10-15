@@ -13,15 +13,23 @@ public class Municipality {
     @Id
     private Long municipalityID;
     private String name;
+    @Column(name="Number_Of_Votes")
     private int numberOfVotes;
+    @Column(name="Votes_ForKO")
     private int votesForKO;
-    private int votesForPIS;
-    private int votesForKONF;
-    private int votesForTD;
+    @Column(name="Votes_ForLEW")
     private int votesForLEW;
+    @Column(name="Votes_ForTD")
+    private int votesForTD;
+    @Column(name="Votes_ForKONF")
+    private int votesForKONF;
+    @Column(name="Votes_ForPIS")
+    private int votesForPIS;
+    @Column(name="Votes_ForBS")
     private int votesForBS;
 
     @JsonInclude(NON_NULL)
+    @Column(name="Votes_ForMN")
     private Integer votesForMN;
 
     public Long getMunicipalityID() {

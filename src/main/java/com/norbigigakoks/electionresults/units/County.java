@@ -9,6 +9,7 @@ import jakarta.persistence.Table;
 public class County {
     @Id
     private Long countyID;
+
     private String name;
 
     // Getters and Setters
