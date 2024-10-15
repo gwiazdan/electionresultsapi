@@ -27,9 +27,17 @@
         <tag/>
         <url/>
     </scm>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/norbigigakoks/electionresultsapi</url>
+        </repository>
+    </distributionManagement>
     <properties>
         <java.version>17</java.version>
         <spring-cloud.version>2023.0.3</spring-cloud.version>
+        <gpg.skip>true</gpg.skip>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -104,6 +112,11 @@
                 <configuration>
                     <mainClass>com.norbigigakoks.electionresults.ElectionResultsAPIApplication</mainClass>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.1.3</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
