@@ -40,5 +40,5 @@ jobs:
     - name: Publish to GitHub Packages
       run: mvn deploy
       env:
-        GITHUB_USERNAME: ${{ secrets.GITHUB_ACTOR }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_USERNAME: ${{ secrets.ACTOR }}
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
