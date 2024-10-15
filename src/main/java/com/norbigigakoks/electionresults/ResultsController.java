@@ -1,6 +1,7 @@
 package com.norbigigakoks.electionresults;
 
 import com.norbigigakoks.electionresults.dto.CountyVoteSummary;
+import com.norbigigakoks.electionresults.dto.VoivodeshipVoteSummary;
 import com.norbigigakoks.electionresults.units.Municipality;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -28,4 +29,7 @@ public class ResultsController {
 
     @GetMapping("/counties")
     public List<CountyVoteSummary> getAllCounties() { return municipalityRepository.findCountyVoteSummary();}
+    
+    @GetMapping("/voivodeships")
+    public List<VoivodeshipVoteSummary> getAllVoivodeships() {return municipalityRepository.findVoivodeshipVoteSummary();}
 }

@@ -1,8 +1,7 @@
 package com.norbigigakoks.electionresults.units;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="Counties")
@@ -28,4 +27,9 @@ public class County {
     public void setName(String name) {
         this.name = name;
     }
+
+    @ManyToOne
+    @JoinColumn(name="voivodeshipID")
+    @JsonIgnore
+    private Voivodeship voivodeship;
 }
