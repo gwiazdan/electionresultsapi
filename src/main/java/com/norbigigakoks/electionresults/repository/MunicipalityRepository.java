@@ -1,4 +1,4 @@
-package com.norbigigakoks.electionresults;
+package com.norbigigakoks.electionresults.repository;
 
 import com.norbigigakoks.electionresults.dto.CountyVoteSummary;
 import com.norbigigakoks.electionresults.dto.VoivodeshipVoteSummary;

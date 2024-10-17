@@ -1,6 +1,7 @@
 package com.norbigigakoks.electionresults;
 
 import com.norbigigakoks.electionresults.dto.SenateVoteSummary;
+import com.norbigigakoks.electionresults.repository.SenateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

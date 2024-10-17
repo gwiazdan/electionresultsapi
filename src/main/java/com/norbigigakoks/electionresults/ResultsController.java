@@ -3,6 +3,8 @@ package com.norbigigakoks.electionresults;
 import com.norbigigakoks.electionresults.dto.CountyVoteSummary;
 import com.norbigigakoks.electionresults.dto.SenateVoteSummary;
 import com.norbigigakoks.electionresults.dto.VoivodeshipVoteSummary;
+import com.norbigigakoks.electionresults.repository.MunicipalityRepository;
+import com.norbigigakoks.electionresults.repository.TerritoriesRepository;
 import com.norbigigakoks.electionresults.units.Municipality;
 import com.norbigigakoks.electionresults.units.Territory;
 import org.springframework.beans.factory.annotation.Autowired;

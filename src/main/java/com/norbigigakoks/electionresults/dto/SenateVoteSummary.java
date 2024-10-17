@@ -27,6 +27,14 @@ public class SenateVoteSummary {
         this.votesForMN = votesForMN;
     }
 
+    public Long getVotesForSenatePact() {
+        return votesForKO + votesForLEW + votesForTD;
+    }
+
+    public Long getVotesForRightWingPact() {
+        return votesForPIS + votesForKONF;
+    }
+
     public Long getSenateID() {
         return senateID;
     }
