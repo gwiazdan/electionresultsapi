@@ -1,4 +1,4 @@
-FROM opendjdk:17-jdk-slim
+FROM openjdk:17-jdk-slim
 LABEL authors="gwiazdan"
 
 WORKDIR /app
