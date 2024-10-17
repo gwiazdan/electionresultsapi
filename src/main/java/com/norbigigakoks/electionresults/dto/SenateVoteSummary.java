@@ -2,10 +2,8 @@ package com.norbigigakoks.electionresults.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-public class VoivodeshipVoteSummary {
-
-    private Long voivodeshipID;
-    private String name;
+public class SenateVoteSummary {
+    private Long senateID;
     private Long numberOfVotes;
     private Long votesForKO;
     private Long votesForPIS;
@@ -17,9 +15,8 @@ public class VoivodeshipVoteSummary {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Long votesForMN;
 
-    public VoivodeshipVoteSummary(Long voivodeshipID, String name, Long numberOfVotes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS, Long votesForMN){
-        this.voivodeshipID = voivodeshipID;
-        this.name = name;
+    public SenateVoteSummary(Long senateID, Long numberOfVotes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS, Long votesForMN) {
+        this.senateID = senateID;
         this.numberOfVotes = numberOfVotes;
         this.votesForKO = votesForKO;
         this.votesForPIS = votesForPIS;
@@ -30,20 +27,20 @@ public class VoivodeshipVoteSummary {
         this.votesForMN = votesForMN;
     }
 
-    public Long getVoivodeshipID() {
-        return voivodeshipID;
+    public Long getSenateID() {
+        return senateID;
     }
 
-    public void setVoivodeshipID(Long voivodeshipID) {
-        this.voivodeshipID = voivodeshipID;
+    public void setSenateID(Long senateID) {
+        this.senateID = senateID;
     }
 
-    public String getName() {
-        return name;
+    public Long getNumberOfVotes() {
+        return numberOfVotes;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNumberOfVotes(Long numberOfVotes) {
+        this.numberOfVotes = numberOfVotes;
     }
 
     public Long getVotesForKO() {
@@ -92,14 +89,6 @@ public class VoivodeshipVoteSummary {
 
     public void setVotesForBS(Long votesForBS) {
         this.votesForBS = votesForBS;
-    }
-
-    public Long getNumberOfVotes() {
-        return numberOfVotes;
-    }
-
-    public void setNumberOfVotes(Long numberOfVotes) {
-        this.numberOfVotes = numberOfVotes;
     }
 
     public Long getVotesForMN() {

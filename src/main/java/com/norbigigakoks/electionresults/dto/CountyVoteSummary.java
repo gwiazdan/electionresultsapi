@@ -1,6 +1,10 @@
 package com.norbigigakoks.electionresults.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.norbigigakoks.electionresults.units.Senate;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 public class CountyVoteSummary {
     private Long countyID;
@@ -17,7 +21,7 @@ public class CountyVoteSummary {
     private Long votesForMN;
 
 
-    public CountyVoteSummary(Long countyID, String name, Long numberOfVotes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS, Long votesForMN) {
+    public CountyVoteSummary(Long countyID, String name, Long numberOfVotes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS, Long votesForMN, Senate senate) {
         this.countyID = countyID;
         this.name = name;
         this.numberOfVotes = numberOfVotes;
@@ -28,6 +32,7 @@ public class CountyVoteSummary {
         this.votesForLEW = votesForLEW;
         this.votesForBS = votesForBS;
         this.votesForMN = votesForMN;
+        this.senate = senate;
     }
 
     public String getName() {
@@ -104,6 +109,19 @@ public class CountyVoteSummary {
 
     public void setNumberOfVotes(Long numberOfVotes) {
         this.numberOfVotes = numberOfVotes;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "SenateID")
+    @JsonIgnore
+    private Senate senate;
+
+    public Senate getSenate() {
+        return senate;
+    }
+
+    public void setSenate(Senate senate) {
+        this.senate = senate;
     }
 }
 

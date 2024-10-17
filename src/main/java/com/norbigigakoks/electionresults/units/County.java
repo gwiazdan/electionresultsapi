@@ -40,4 +40,17 @@ public class County {
     public void setVoivodeship(Voivodeship voivodeship) {
         this.voivodeship = voivodeship;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "senateID")
+    @JsonIgnore
+    private Senate senate;
+
+    public Senate getSenate() {
+        return senate;
+    }
+
+    public void setSenate(Senate senate) {
+        this.senate = senate;
+    }
 }

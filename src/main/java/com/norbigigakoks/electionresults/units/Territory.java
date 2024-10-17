@@ -1,12 +1,10 @@
 package com.norbigigakoks.electionresults.units;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "AdditionalTerritories")
+@Table(name = "Territories")
 public class Territory {
 
     @Id
@@ -28,13 +26,6 @@ public class Territory {
     private int votesForBS;
 
 
-    public Long getMunicipalityID() {
-        return territoryID;
-    }
-
-    public void setMunicipalityID(Long municipalityID) {
-        this.territoryID = municipalityID;
-    }
 
     public String getName() {
         return name;
@@ -98,5 +89,26 @@ public class Territory {
 
     public void setVotesForBS(int votesForBS) {
         this.votesForBS = votesForBS;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "senateID")
+    @JsonIgnore
+    private Senate senate;
+
+    public Long getTerritoryID() {
+        return territoryID;
+    }
+
+    public void setTerritoryID(Long territoryID) {
+        this.territoryID = territoryID;
+    }
+
+    public Senate getSenate() {
+        return senate;
+    }
+
+    public void setSenate(Senate senate) {
+        this.senate = senate;
     }
 }
