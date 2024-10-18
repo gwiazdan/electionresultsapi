@@ -41,9 +41,8 @@ public class County {
         this.voivodeship = voivodeship;
     }
 
-    @ManyToOne
+    @ManyToOne(optional = true)
     @JoinColumn(name = "senateID")
-    @JsonIgnore
     private Senate senate;
 
     public Senate getSenate() {

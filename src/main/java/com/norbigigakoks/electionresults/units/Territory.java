@@ -1,7 +1,10 @@
 package com.norbigigakoks.electionresults.units;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
+
+import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
 @Entity
 @Table(name = "Territories")
@@ -91,7 +94,8 @@ public class Territory {
         this.votesForBS = votesForBS;
     }
 
-    @ManyToOne
+    @JsonInclude(NON_NULL)
+    @ManyToOne(optional = true)
     @JoinColumn(name = "senateID")
     @JsonIgnore
     private Senate senate;
