@@ -11,7 +11,7 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 public class Municipality {
 
     @Id
-    private Long municipalityID;
+    private Long id;
     private String name;
     @Column(name="Number_Of_Votes")
     private int numberOfVotes;
@@ -32,13 +32,6 @@ public class Municipality {
     @Column(name="Votes_ForMN")
     private Integer votesForMN;
 
-    public Long getMunicipalityID() {
-        return municipalityID;
-    }
-
-    public void setMunicipalityID(Long municipalityID) {
-        this.municipalityID = municipalityID;
-    }
 
     public String getName() {
         return name;
@@ -123,5 +116,13 @@ public class Municipality {
 
     public void setVotesForMN(Integer votesForMN) {
         this.votesForMN = votesForMN;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long ID) {
+        this.id = ID;
     }
 }

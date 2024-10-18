@@ -7,17 +7,17 @@ import jakarta.persistence.*;
 @Table(name="Counties")
 public class County {
     @Id
-    private Long countyID;
+    private Long id;
 
     private String name;
 
     // Getters and Setters
     public Long getCountyID() {
-        return countyID;
+        return id;
     }
 
     public void setCountyID(Long countyID) {
-        this.countyID = countyID;
+        this.id = countyID;
     }
 
     public String getName() {

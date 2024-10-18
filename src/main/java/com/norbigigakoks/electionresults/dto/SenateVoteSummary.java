@@ -3,7 +3,7 @@ package com.norbigigakoks.electionresults.dto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 public class SenateVoteSummary {
-    private Long senateID;
+    private Long id;
     private Long numberOfVotes;
     private Long votesForKO;
     private Long votesForPIS;
@@ -15,8 +15,8 @@ public class SenateVoteSummary {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Long votesForMN;
 
-    public SenateVoteSummary(Long senateID, Long numberOfVotes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS, Long votesForMN) {
-        this.senateID = senateID;
+    public SenateVoteSummary(Long id, Long numberOfVotes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS, Long votesForMN) {
+        this.id = id;
         this.numberOfVotes = numberOfVotes;
         this.votesForKO = votesForKO;
         this.votesForPIS = votesForPIS;
@@ -35,12 +35,12 @@ public class SenateVoteSummary {
         return votesForPIS + votesForKONF;
     }
 
-    public Long getSenateID() {
-        return senateID;
+    public Long getId() {
+        return id;
     }
 
-    public void setSenateID(Long senateID) {
-        this.senateID = senateID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getNumberOfVotes() {

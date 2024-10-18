@@ -11,7 +11,7 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 public class Territory {
 
     @Id
-    private Long territoryID;
+    private Long id;
     private String name;
     @Column(name = "Number_Of_Votes")
     private int numberOfVotes;
@@ -100,19 +100,19 @@ public class Territory {
     @JsonIgnore
     private Senate senate;
 
-    public Long getTerritoryID() {
-        return territoryID;
-    }
-
-    public void setTerritoryID(Long territoryID) {
-        this.territoryID = territoryID;
-    }
-
     public Senate getSenate() {
         return senate;
     }
 
     public void setSenate(Senate senate) {
         this.senate = senate;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long ID) {
+        this.id = ID;
     }
 }

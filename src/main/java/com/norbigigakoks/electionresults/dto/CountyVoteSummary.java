@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
 public class CountyVoteSummary {
-    private Long countyID;
+    private Long id;
     private String name;
     private Long numberOfVotes;
     private Long votesForKO;
@@ -18,8 +18,8 @@ public class CountyVoteSummary {
     @JsonInclude(NON_NULL)
     private Long votesForMN;
 
-    public CountyVoteSummary(Long countyID, String name, Long numberOfVotes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS, Long votesForMN) {
-        this.countyID = countyID;
+    public CountyVoteSummary(Long id, String name, Long numberOfVotes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS, Long votesForMN) {
+        this.id = id;
         this.name = name;
         this.numberOfVotes = numberOfVotes;
         this.votesForKO = votesForKO;
@@ -43,12 +43,12 @@ public class CountyVoteSummary {
         return votesForBS;
     }
 
-    public Long getCountyID() {
-        return countyID;
+    public Long getId() {
+        return id;
     }
 
-    public void setCountyID(Long countyID) {
-        this.countyID = countyID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getVotesForKO() {

@@ -23,11 +23,11 @@ public class SenateService {
         Map<Long, SenateVoteSummary> summaryMap = new HashMap<>();
 
         for (SenateVoteSummary summary : countiesSummaries) {
-            summaryMap.put(summary.getSenateID(), summary);
+            summaryMap.put(summary.getId(), summary);
         }
 
         for (SenateVoteSummary summary : territorySummaries) {
-            summaryMap.merge(summary.getSenateID(), summary, (oldSummary, newSummary) -> {
+            summaryMap.merge(summary.getId(), summary, (oldSummary, newSummary) -> {
                 oldSummary.setNumberOfVotes(oldSummary.getNumberOfVotes() + newSummary.getNumberOfVotes());
                 oldSummary.setVotesForKO(oldSummary.getVotesForKO() + newSummary.getVotesForKO());
                 oldSummary.setVotesForPIS(oldSummary.getVotesForPIS() + newSummary.getVotesForPIS());

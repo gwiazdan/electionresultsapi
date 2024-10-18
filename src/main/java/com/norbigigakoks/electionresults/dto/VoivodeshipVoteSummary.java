@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 
 public class VoivodeshipVoteSummary {
 
-    private Long voivodeshipID;
+    private Long id;
     private String name;
     private Long numberOfVotes;
     private Long votesForKO;
@@ -17,8 +17,8 @@ public class VoivodeshipVoteSummary {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Long votesForMN;
 
-    public VoivodeshipVoteSummary(Long voivodeshipID, String name, Long numberOfVotes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS, Long votesForMN){
-        this.voivodeshipID = voivodeshipID;
+    public VoivodeshipVoteSummary(Long id, String name, Long numberOfVotes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS, Long votesForMN) {
+        this.id = id;
         this.name = name;
         this.numberOfVotes = numberOfVotes;
         this.votesForKO = votesForKO;
@@ -30,12 +30,12 @@ public class VoivodeshipVoteSummary {
         this.votesForMN = votesForMN;
     }
 
-    public Long getVoivodeshipID() {
-        return voivodeshipID;
+    public Long getId() {
+        return id;
     }
 
-    public void setVoivodeshipID(Long voivodeshipID) {
-        this.voivodeshipID = voivodeshipID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

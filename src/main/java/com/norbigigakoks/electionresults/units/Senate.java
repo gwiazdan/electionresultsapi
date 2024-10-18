@@ -8,13 +8,13 @@ import jakarta.persistence.Table;
 @Table(name = "Senate")
 public class Senate {
     @Id
-    private Long senateID;
+    private Long id;
 
-    public Long getSenateID() {
-        return senateID;
+    public Long getId() {
+        return id;
     }
 
-    public void setSenateID(Long senateID) {
-        this.senateID = senateID;
+    public void setId(Long ID) {
+        this.id = ID;
     }
 }

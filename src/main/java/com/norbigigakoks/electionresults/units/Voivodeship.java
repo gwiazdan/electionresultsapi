@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 @Table(name="Voivodeships")
 public class Voivodeship {
     @Id
-    private Long voivodeshipID;
+    private Long id;
 
     private String name;
 
@@ -20,11 +20,11 @@ public class Voivodeship {
         this.name = name;
     }
 
-    public Long getVoivodeshipID() {
-        return voivodeshipID;
+    public Long getId() {
+        return id;
     }
 
-    public void setVoivodeshipID(Long voivodeshipID) {
-        this.voivodeshipID = voivodeshipID;
+    public void setId(Long ID) {
+        this.id = ID;
     }
 }
