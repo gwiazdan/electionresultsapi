@@ -58,4 +58,4 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/electionresults-api:latest
         file: Dockerfile  # Upewnij się, że wskazujesz na właściwy Dockerfile, jeśli nie jest w domyślnej lokalizacji
-        build-args: JAR_FILE=target/electionresults-api-jar.jar  # Przykładowy argument budowania, dostosuj do swoich potrzeb
+        build-args: JAR_FILE=target/electionresults-api-jar  # Przykładowy argument budowania, dostosuj do swoich potrzeb
