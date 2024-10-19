@@ -13,9 +13,13 @@ COPY db ./db
 
 RUN apt-get update && apt-get install -y maven && mvn dependency:resolve
 
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-
 EXPOSE 8081
 
-CMD ["java", "-jar", "target/electionresults-0.0.1-SNAPSHOT.jar"]
+# Definicja argumentu budowy z domyślną wartością
+ARG JAR_FILE=electionresults-0.0.1-SNAPSHOT.jar
+
+# Kopiowanie pliku JAR do obrazu
+COPY ${JAR_FILE} app.jar
+
+# Uruchomienie aplikacji
+ENTRYPOINT ["java", "-jar", "app.jar"]
