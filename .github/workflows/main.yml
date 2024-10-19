@@ -51,11 +51,16 @@ jobs:
       with:
         name: electionresults-api-jar
 
+    - name: Unzip the JAR artifact
+      run: |
+        unzip electionresults-api-jar.zip -d ./app
+        ls ./app  # Sprawdź, co zostało rozpakowane
+
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
         context: . 
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/electionresults-api:latest
-        file: Dockerfile  # Upewnij się, że wskazujesz na właściwy Dockerfile, jeśli nie jest w domyślnej lokalizacji
-        build-args: JAR_FILE=target/electionresults-api-jar  # Przykładowy argument budowania, dostosuj do swoich potrzeb
+        file: Dockerfile
+        build-args: JAR_FILE=app/electionresults-0.0.1-SNAPSHOT.jar  # Ścieżka do rozpakowanego pliku
