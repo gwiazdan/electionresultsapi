@@ -51,11 +51,6 @@ jobs:
       with:
         name: electionresults-api-jar
 
-    - name: List files after downloading
-      run: |
-        echo "Files in the current directory:"
-        ls -la
-
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
