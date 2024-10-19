@@ -27,7 +27,7 @@ jobs:
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
           ${{ runner.os }}-maven-
-
+          
     - name: Build with Maven
       run: mvn clean package
 
@@ -46,9 +46,16 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
+    - name: Download JAR artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: electionresults-api-jar
+
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
-        context: .
+        context: . 
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/electionresults-api:latest
+        file: Dockerfile  # Upewnij się, że wskazujesz na właściwy Dockerfile, jeśli nie jest w domyślnej lokalizacji
+        build-args: JAR_FILE=target/electionresults-api-jar.jar  # Przykładowy argument budowania, dostosuj do swoich potrzeb
