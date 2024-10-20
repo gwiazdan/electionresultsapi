@@ -46,9 +46,16 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
+    - name: Download JAR artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: electionresults-api-jar
+
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
-        context: .
+        context: . 
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/electionresults-api:latest
+        file: Dockerfile
+        build-args: JAR_FILE=electionresults-0.0.1-SNAPSHOT.jar  # Użyj bezpośrednio pliku JAR
