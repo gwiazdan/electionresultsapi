@@ -1,13 +1,17 @@
 package com.norbigigakoks.electionresults;
 
 import com.norbigigakoks.electionresults.dto.CountyVoteSummary;
+import com.norbigigakoks.electionresults.dto.SejmVoteSummary;
 import com.norbigigakoks.electionresults.dto.SenateVoteSummary;
 import com.norbigigakoks.electionresults.dto.VoivodeshipVoteSummary;
-import com.norbigigakoks.electionresults.repository.MunicipalityRepository;
-import com.norbigigakoks.electionresults.repository.TerritoriesRepository;
+import com.norbigigakoks.electionresults.repositories.MunicipalityRepository;
+import com.norbigigakoks.electionresults.repositories.TerritoriesRepository;
+import com.norbigigakoks.electionresults.services.SejmService;
+import com.norbigigakoks.electionresults.services.SenateService;
 import com.norbigigakoks.electionresults.units.Municipality;
 import com.norbigigakoks.electionresults.units.Territory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,11 +27,19 @@ public class ResultsController {
     private final MunicipalityRepository municipalityRepository;
     private final TerritoriesRepository territoriesRepository;
     private final SenateService senateService;
+    private final SejmService sejmService;
+
     @Autowired
-    public ResultsController(MunicipalityRepository municipalityRepository, TerritoriesRepository territoriesRepository, SenateService senateService) {
+    public ResultsController(MunicipalityRepository municipalityRepository, TerritoriesRepository territoriesRepository, SenateService senateService, SejmService sejmService) {
         this.municipalityRepository = municipalityRepository;
         this.territoriesRepository = territoriesRepository;
         this.senateService = senateService;
+        this.sejmService = sejmService;
+    }
+
+    @GetMapping("/health")
+    public ResponseEntity<String> healthCheck() {
+        return ResponseEntity.ok("API is running");
     }
 
     @GetMapping("/municipalities")
@@ -49,6 +61,11 @@ public class ResultsController {
     @GetMapping("/senate")
     public List<SenateVoteSummary> getSenateResults() {
         return senateService.getSenateResults();
+    }
+
+    @GetMapping("/sejm")
+    public List<SejmVoteSummary> getSejmResults() {
+        return sejmService.getSenateResults();
     }
 
 }

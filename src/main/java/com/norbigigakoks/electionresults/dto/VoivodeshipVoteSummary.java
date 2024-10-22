@@ -30,6 +30,14 @@ public class VoivodeshipVoteSummary {
         this.votesForMN = votesForMN;
     }
 
+    public Long getVotesForGovernment() {
+        return votesForKO + votesForLEW + votesForTD;
+    }
+
+    public Long getVotesForOpposition() {
+        return numberOfVotes - getVotesForGovernment();
+    }
+
     public Long getId() {
         return id;
     }

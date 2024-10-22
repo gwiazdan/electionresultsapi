@@ -2,11 +2,10 @@ package com.norbigigakoks.electionresults.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
-
-public class CountyVoteSummary {
+public class SejmVoteSummary {
     private Long id;
     private String name;
+    private int seats;
     private Long numberOfVotes;
     private Long votesForKO;
     private Long votesForPIS;
@@ -15,12 +14,11 @@ public class CountyVoteSummary {
     private Long votesForLEW;
     private Long votesForBS;
 
-    @JsonInclude(NON_NULL)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Long votesForMN;
 
-    public CountyVoteSummary(Long id, String name, Long numberOfVotes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS, Long votesForMN) {
+    public SejmVoteSummary(Long id, String name, int seats, Long numberOfVotes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS, Long votesForMN) {
         this.id = id;
-        this.name = name;
         this.numberOfVotes = numberOfVotes;
         this.votesForKO = votesForKO;
         this.votesForPIS = votesForPIS;
@@ -29,26 +27,8 @@ public class CountyVoteSummary {
         this.votesForLEW = votesForLEW;
         this.votesForBS = votesForBS;
         this.votesForMN = votesForMN;
-    }
-
-    public Long getVotesForGovernment() {
-        return votesForKO + votesForLEW + votesForTD;
-    }
-
-    public Long getVotesForOpposition() {
-        return numberOfVotes - getVotesForGovernment();
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setVotesForBS(Long votesForBS) {
-        this.votesForBS = votesForBS;
-    }
-
-    public Long getVotesForBS() {
-        return votesForBS;
+        this.seats = seats;
+        this.name = name;
     }
 
     public Long getId() {
@@ -57,6 +37,14 @@ public class CountyVoteSummary {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getNumberOfVotes() {
+        return numberOfVotes;
+    }
+
+    public void setNumberOfVotes(Long numberOfVotes) {
+        this.numberOfVotes = numberOfVotes;
     }
 
     public Long getVotesForKO() {
@@ -99,6 +87,14 @@ public class CountyVoteSummary {
         this.votesForLEW = votesForLEW;
     }
 
+    public Long getVotesForBS() {
+        return votesForBS;
+    }
+
+    public void setVotesForBS(Long votesForBS) {
+        this.votesForBS = votesForBS;
+    }
+
     public Long getVotesForMN() {
         return votesForMN;
     }
@@ -107,13 +103,19 @@ public class CountyVoteSummary {
         this.votesForMN = votesForMN;
     }
 
-    public Long getNumberOfVotes() {
-        return numberOfVotes;
+    public String getName() {
+        return name;
     }
 
-    public void setNumberOfVotes(Long numberOfVotes) {
-        this.numberOfVotes = numberOfVotes;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getSeats() {
+        return seats;
+    }
+
+    public void setSeats(int seats) {
+        this.seats = seats;
     }
 }
-
-

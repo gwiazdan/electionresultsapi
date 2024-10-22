@@ -32,6 +32,14 @@ public class Municipality {
     @Column(name="Votes_ForMN")
     private Integer votesForMN;
 
+    public int getVotesForGovernment() {
+        return votesForKO + votesForLEW + votesForTD;
+    }
+
+    public int getVotesForOpposition() {
+        return numberOfVotes - getVotesForGovernment();
+    }
+
 
     public String getName() {
         return name;

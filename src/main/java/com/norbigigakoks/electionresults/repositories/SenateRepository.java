@@ -1,4 +1,4 @@
-package com.norbigigakoks.electionresults.repository;
+package com.norbigigakoks.electionresults.repositories;
 
 import com.norbigigakoks.electionresults.dto.SenateVoteSummary;
 import com.norbigigakoks.electionresults.units.Senate;

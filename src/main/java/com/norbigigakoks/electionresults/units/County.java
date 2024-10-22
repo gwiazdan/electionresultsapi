@@ -28,6 +28,7 @@ public class County {
         this.name = name;
     }
 
+
     @ManyToOne
     @JoinColumn(name="voivodeshipID")
     @JsonIgnore
@@ -43,7 +44,13 @@ public class County {
 
     @ManyToOne(optional = true)
     @JoinColumn(name = "senateID")
+    @JsonIgnore
     private Senate senate;
+
+    @ManyToOne
+    @JoinColumn(name = "sejmID")
+    @JsonIgnore
+    private Sejm sejm;
 
     public Senate getSenate() {
         return senate;
@@ -51,5 +58,13 @@ public class County {
 
     public void setSenate(Senate senate) {
         this.senate = senate;
+    }
+
+    public Sejm getSejm() {
+        return sejm;
+    }
+
+    public void setSejm(Sejm sejm) {
+        this.sejm = sejm;
     }
 }

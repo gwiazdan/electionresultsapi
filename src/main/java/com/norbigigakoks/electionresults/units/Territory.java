@@ -100,6 +100,12 @@ public class Territory {
     @JsonIgnore
     private Senate senate;
 
+    @JsonInclude(NON_NULL)
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "sejmID")
+    @JsonIgnore
+    private Sejm sejm;
+
     public Senate getSenate() {
         return senate;
     }
@@ -114,5 +120,13 @@ public class Territory {
 
     public void setId(Long ID) {
         this.id = ID;
+    }
+
+    public Sejm getSejm() {
+        return sejm;
+    }
+
+    public void setSejm(Sejm sejm) {
+        this.sejm = sejm;
     }
 }
