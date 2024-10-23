@@ -5,8 +5,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Senate")
-public class Senate {
+@Table(name = "European_Parliament")
+public class Euro {
     @Id
     private Long id;
 

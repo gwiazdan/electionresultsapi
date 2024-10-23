@@ -1,15 +1,18 @@
 package com.norbigigakoks.electionresults.repositories;
 
-import com.norbigigakoks.electionresults.dto.SenateVoteSummary;
-import com.norbigigakoks.electionresults.units.Senate;
+import com.norbigigakoks.electionresults.dto.SejmikVoteSummary;
+import com.norbigigakoks.electionresults.units.Sejmik;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface SenateRepository extends JpaRepository<Senate, Long> {
-    @Query("SELECT new com.norbigigakoks.electionresults.dto.SenateVoteSummary(s.id, " +
+public interface SejmikRepository extends JpaRepository<Sejmik, Long> {
+    @Query("SELECT new com.norbigigakoks.electionresults.dto.SejmikVoteSummary(s.id, " +
             "s.name, " +
+            "s.number, " +
+            "s.voivodeship.id, " +
+            "s.seats, " +
             "SUM(m.numberOfVotes), " +
             "SUM(m.votesForKO), " +
             "SUM(m.votesForPIS), " +
@@ -18,12 +21,15 @@ public interface SenateRepository extends JpaRepository<Senate, Long> {
             "SUM(m.votesForLEW), " +
             "SUM(m.votesForBS), " +
             "SUM(m.votesForMN )) " +
-            "FROM Municipality m JOIN m.county c JOIN c.senate s " +
+            "FROM Municipality m JOIN m.county c JOIN c.sejmik s " +
             "GROUP BY s.id")
-    List<SenateVoteSummary> findCountiesSummaries();
+    List<SejmikVoteSummary> findCountiesSummaries();
 
-    @Query("SELECT new com.norbigigakoks.electionresults.dto.SenateVoteSummary(s.id, " +
+    @Query("SELECT new com.norbigigakoks.electionresults.dto.SejmikVoteSummary(s.id, " +
             "s.name, " +
+            "s.number, " +
+            "s.voivodeship.id, " +
+            "s.seats, " +
             "SUM(t.numberOfVotes), " +
             "SUM(t.votesForKO), " +
             "SUM(t.votesForPIS), " +
@@ -32,7 +38,7 @@ public interface SenateRepository extends JpaRepository<Senate, Long> {
             "SUM(t.votesForLEW), " +
             "SUM(t.votesForBS), " +
             "null) " +
-            "FROM Territory t JOIN t.senate s " +
+            "FROM Territory t JOIN t.sejmik s " +
             "GROUP BY s.id")
-    List<SenateVoteSummary> findTerritorySummaries();
+    List<SejmikVoteSummary> findTerritorySummaries();
 }

@@ -52,6 +52,17 @@ public class County {
     @JsonIgnore
     private Sejm sejm;
 
+
+    @ManyToOne
+    @JoinColumn(name = "sejmikID")
+    @JsonIgnore
+    private Sejmik sejmik;
+
+    @ManyToOne
+    @JoinColumn(name = "europarlamentID")
+    @JsonIgnore
+    private Euro euro;
+
     public Senate getSenate() {
         return senate;
     }
@@ -66,5 +77,21 @@ public class County {
 
     public void setSejm(Sejm sejm) {
         this.sejm = sejm;
+    }
+
+    public Sejmik getSejmik() {
+        return sejmik;
+    }
+
+    public void setSejmik(Sejmik sejmik) {
+        this.sejmik = sejmik;
+    }
+
+    public Euro getEuro() {
+        return euro;
+    }
+
+    public void setEuro(Euro euro) {
+        this.euro = euro;
     }
 }

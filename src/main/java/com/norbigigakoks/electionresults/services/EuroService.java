@@ -1,7 +1,7 @@
 package com.norbigigakoks.electionresults.services;
 
-import com.norbigigakoks.electionresults.dto.SejmVoteSummary;
-import com.norbigigakoks.electionresults.repositories.SejmRepository;
+import com.norbigigakoks.electionresults.dto.EuroVoteSummary;
+import com.norbigigakoks.electionresults.repositories.EuroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,22 +11,22 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class SejmService {
+public class EuroService {
 
     @Autowired
-    private SejmRepository sejmRepository;
+    private EuroRepository euroRepository;
 
-    public List<SejmVoteSummary> getSejmResults() {
-        List<SejmVoteSummary> countiesSummaries = sejmRepository.findCountiesSummaries();
-        List<SejmVoteSummary> territorySummaries = sejmRepository.findTerritorySummaries();
+    public List<EuroVoteSummary> getEuroResults() {
+        List<EuroVoteSummary> countiesSummaries = euroRepository.findCountiesSummaries();
+        List<EuroVoteSummary> territorySummaries = euroRepository.findTerritorySummaries();
 
-        Map<Long, SejmVoteSummary> summaryMap = new HashMap<>();
+        Map<Long, EuroVoteSummary> summaryMap = new HashMap<>();
 
-        for (SejmVoteSummary summary : countiesSummaries) {
+        for (EuroVoteSummary summary : countiesSummaries) {
             summaryMap.put(summary.getId(), summary);
         }
 
-        for (SejmVoteSummary summary : territorySummaries) {
+        for (EuroVoteSummary summary : territorySummaries) {
             summaryMap.merge(summary.getId(), summary, (oldSummary, newSummary) -> {
                 oldSummary.setNumberOfVotes(oldSummary.getNumberOfVotes() + newSummary.getNumberOfVotes());
                 oldSummary.setVotesForKO(oldSummary.getVotesForKO() + newSummary.getVotesForKO());

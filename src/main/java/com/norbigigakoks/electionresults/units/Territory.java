@@ -106,6 +106,18 @@ public class Territory {
     @JsonIgnore
     private Sejm sejm;
 
+    @JsonInclude(NON_NULL)
+    @ManyToOne
+    @JoinColumn(name = "sejmikID")
+    @JsonIgnore
+    private Sejmik sejmik;
+
+    @JsonInclude(NON_NULL)
+    @ManyToOne
+    @JoinColumn(name = "europarlamentID")
+    @JsonIgnore
+    private Euro euro;
+
     public Senate getSenate() {
         return senate;
     }
@@ -128,5 +140,21 @@ public class Territory {
 
     public void setSejm(Sejm sejm) {
         this.sejm = sejm;
+    }
+
+    public Sejmik getSejmik() {
+        return sejmik;
+    }
+
+    public void setSejmik(Sejmik sejmik) {
+        this.sejmik = sejmik;
+    }
+
+    public Euro getEuro() {
+        return euro;
+    }
+
+    public void setEuro(Euro euro) {
+        this.euro = euro;
     }
 }

@@ -2,7 +2,7 @@ package com.norbigigakoks.electionresults.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-public class SenateVoteSummary {
+public class EuroVoteSummary {
     private Long id;
     private String name;
     private Long numberOfVotes;
@@ -16,7 +16,7 @@ public class SenateVoteSummary {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Long votesForMN;
 
-    public SenateVoteSummary(Long id, String name, Long numberOfVotes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS, Long votesForMN) {
+    public EuroVoteSummary(Long id, String name, Long numberOfVotes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS, Long votesForMN) {
         this.id = id;
         this.name = name;
         this.numberOfVotes = numberOfVotes;
@@ -29,13 +29,6 @@ public class SenateVoteSummary {
         this.votesForMN = votesForMN;
     }
 
-    public Long getVotesForSenatePact() {
-        return votesForKO + votesForLEW + votesForTD;
-    }
-
-    public Long getVotesForRightWingPact() {
-        return votesForPIS + votesForKONF;
-    }
 
     public Long getId() {
         return id;
@@ -101,19 +94,19 @@ public class SenateVoteSummary {
         this.votesForBS = votesForBS;
     }
 
-    public Long getVotesForMN() {
-        return votesForMN;
-    }
-
-    public void setVotesForMN(Long votesForMN) {
-        this.votesForMN = votesForMN;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Long getVotesForMN() {
+        return votesForMN;
+    }
+
+    public void setVotesForMN(Long votesForMN) {
+        this.votesForMN = votesForMN;
     }
 }

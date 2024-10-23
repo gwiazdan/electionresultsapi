@@ -2,9 +2,12 @@ package com.norbigigakoks.electionresults.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-public class SenateVoteSummary {
+public class SejmikVoteSummary {
     private Long id;
     private String name;
+    private int number;
+    private Long voivodeshipID;
+    private int seats;
     private Long numberOfVotes;
     private Long votesForKO;
     private Long votesForPIS;
@@ -16,9 +19,8 @@ public class SenateVoteSummary {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Long votesForMN;
 
-    public SenateVoteSummary(Long id, String name, Long numberOfVotes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS, Long votesForMN) {
+    public SejmikVoteSummary(Long id, String name, int number, Long voivodeshipID, int seats, Long numberOfVotes, Long votesForKO, Long votesForPIS, Long votesForKONF, Long votesForTD, Long votesForLEW, Long votesForBS, Long votesForMN) {
         this.id = id;
-        this.name = name;
         this.numberOfVotes = numberOfVotes;
         this.votesForKO = votesForKO;
         this.votesForPIS = votesForPIS;
@@ -27,14 +29,10 @@ public class SenateVoteSummary {
         this.votesForLEW = votesForLEW;
         this.votesForBS = votesForBS;
         this.votesForMN = votesForMN;
-    }
-
-    public Long getVotesForSenatePact() {
-        return votesForKO + votesForLEW + votesForTD;
-    }
-
-    public Long getVotesForRightWingPact() {
-        return votesForPIS + votesForKONF;
+        this.seats = seats;
+        this.name = name;
+        this.voivodeshipID = voivodeshipID;
+        this.number = number;
     }
 
     public Long getId() {
@@ -115,5 +113,29 @@ public class SenateVoteSummary {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getSeats() {
+        return seats;
+    }
+
+    public void setSeats(int seats) {
+        this.seats = seats;
+    }
+
+    public Long getVoivodeshipID() {
+        return voivodeshipID;
+    }
+
+    public void setVoivodeshipID(Long voivodeshipID) {
+        this.voivodeshipID = voivodeshipID;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 }

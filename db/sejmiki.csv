@@ -1,0 +1,86 @@
+﻿ID;Name;Voievodship;Number;Seats
+201;Wrocław;2;1;8
+202;Oława;2;2;8
+203;Wałbrzych;2;3;8
+204;Jelenia Góra;2;4;6
+205;Legnica;2;5;6
+401;Bydgoszcz;4;1;5
+402;Świecie;4;2;5
+403;Grudziądz;4;3;5
+404;Toruń;4;4;5
+405;Inowrocław;4;5;5
+406;Włocławek;4;6;5
+601;Lublin;6;1;5
+602;Puławy;6;2;10
+603;Biała Podlaska;6;3;6
+604;Chełm;6;4;6
+605;Zamość;6;5;6
+801;Gorzów Wielkopolski;8;1;7
+802;Świebodzin;8;2;6
+803;Żary;8;3;5
+804;Zielona Góra;8;4;6
+805;Nowa Sól;8;5;6
+1001;Łódź;10;1;8
+1002;Zgierz;10;2;5
+1003;Sieradz;10;3;8
+1004;Piotrków Trybunalski;10;4;7
+1005;Skierniewice;10;5;8
+1201;Chrzanów;12;1;5
+1202;Wieliczka;12;2;6
+1203;Kraków;12;3;8
+1204;Nowy Targ;12;4;7
+1205;Tarnów;12;5;7
+1206;Nowy Sącz;12;6;6
+1401;Śródmieście;14;1;5
+1402;Wola;14;2;5
+1403;Praga Północ;14;3;6
+1404;Płock;14;4;8
+1405;Radom;14;5;7
+1406;Siedlce;14;6;9
+1407;Grodzisk Mazowiecki;14;7;11
+1601;Opole;16;1;8
+1602;Kluczbork;16;2;5
+1603;Kędzierzyn-Koźle;16;3;5
+1604;Prudnik;16;4;5
+1605;Nysa;16;5;7
+1801;Rzeszów;18;1;8
+1802;Mielec;18;2;6
+1803;Tarnobrzeg;18;3;5
+1804;Przemyśl;18;4;6
+1805;Krosno;18;5;8
+2001;Białystok;20;1;7
+2002;Suwałki;20;2;8
+2003;Łomża;20;3;6
+2004;Siemiatycze;20;4;9
+2201;Słupsk;22;1;7
+2202;Gdynia;22;2;8
+2203;Gdańsk;22;3;6
+2204;Starogard Gdański;22;4;7
+2205;Tczew;22;5;5
+2401;Bielsko-Biała;24;1;7
+2402;Katowice;24;2;7
+2403;Rybnik;24;3;7
+2405;Gliwice;24;5;7
+2406;Zabrze;24;6;5
+2407;Częstochowa;24;7;5
+2408;Sosnowiec;24;8;7
+2601;Ostrowiec Świętokrzyski;26;1;7
+2602;Starachowice;26;2;6
+2603;Kielce;26;3;10
+2604;Busko-Zdrój;26;4;7
+2801;Olsztyn;28;1;6
+2802;Ostróda;28;2;7
+2803;Elbląg;28;3;6
+2804;Ełk;28;4;5
+2805;Giżycko;28;5;6
+3001;Poznań;30;1;5
+3002;Piła;30;2;7
+3003;Gniezno;30;3;8
+3004;Konin;30;4;5
+3005;Kalisz;30;5;7
+3006;Leszno;30;6;7
+3201;Szczecin;32;1;8
+3202;Świnoujście;32;2;5
+3203;Kołobrzeg;32;3;5
+3204;Koszalin;32;4;6
+3205;Stargard;32;5;6

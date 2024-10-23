@@ -1,12 +1,11 @@
 package com.norbigigakoks.electionresults;
 
-import com.norbigigakoks.electionresults.dto.CountyVoteSummary;
-import com.norbigigakoks.electionresults.dto.SejmVoteSummary;
-import com.norbigigakoks.electionresults.dto.SenateVoteSummary;
-import com.norbigigakoks.electionresults.dto.VoivodeshipVoteSummary;
+import com.norbigigakoks.electionresults.dto.*;
 import com.norbigigakoks.electionresults.repositories.MunicipalityRepository;
 import com.norbigigakoks.electionresults.repositories.TerritoriesRepository;
+import com.norbigigakoks.electionresults.services.EuroService;
 import com.norbigigakoks.electionresults.services.SejmService;
+import com.norbigigakoks.electionresults.services.SejmikService;
 import com.norbigigakoks.electionresults.services.SenateService;
 import com.norbigigakoks.electionresults.units.Municipality;
 import com.norbigigakoks.electionresults.units.Territory;
@@ -28,13 +27,17 @@ public class ResultsController {
     private final TerritoriesRepository territoriesRepository;
     private final SenateService senateService;
     private final SejmService sejmService;
+    private final SejmikService sejmikService;
+    private final EuroService euroService;
 
     @Autowired
-    public ResultsController(MunicipalityRepository municipalityRepository, TerritoriesRepository territoriesRepository, SenateService senateService, SejmService sejmService) {
+    public ResultsController(MunicipalityRepository municipalityRepository, TerritoriesRepository territoriesRepository, SenateService senateService, SejmService sejmService, SejmikService sejmikService, EuroService euroService) {
         this.municipalityRepository = municipalityRepository;
         this.territoriesRepository = territoriesRepository;
         this.senateService = senateService;
         this.sejmService = sejmService;
+        this.sejmikService = sejmikService;
+        this.euroService = euroService;
     }
 
     @GetMapping("/health")
@@ -65,7 +68,17 @@ public class ResultsController {
 
     @GetMapping("/sejm")
     public List<SejmVoteSummary> getSejmResults() {
-        return sejmService.getSenateResults();
+        return sejmService.getSejmResults();
+    }
+
+    @GetMapping("/sejmik")
+    public List<SejmikVoteSummary> getSejmikResults() {
+        return sejmikService.getSejmikResults();
+    }
+
+    @GetMapping("/euro")
+    public List<EuroVoteSummary> getEuroResults() {
+        return euroService.getEuroResults();
     }
 
 }

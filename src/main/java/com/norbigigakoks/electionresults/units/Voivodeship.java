@@ -24,7 +24,7 @@ public class Voivodeship {
         return id;
     }
 
-    public void setId(Long ID) {
-        this.id = ID;
+    public void setId(Long id) {
+        this.id = id;
     }
 }
